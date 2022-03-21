@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 export default function Home() {
   return (
+    <>
     <header className='header__main'>
       <div className='header__top'>
         <div className='header__logo'>
@@ -41,7 +42,7 @@ export default function Home() {
           </div>
         </form>
       </div>
-      <div></div>
     </header>
+    </>
   )
 }

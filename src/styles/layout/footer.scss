@@ -1,0 +1,26 @@
+.footer {
+  &__main {
+    background-color: black;
+    font-size: 16px;
+  }
+  &__content {
+    margin: 0px 400px 0px 400px;
+    padding: 70px 45px;
+    p {
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  &__item {
+    padding-left: 0px;
+    padding-right: 50px;
+    li {
+      padding-bottom: 10px;
+    }
+  }
+}
