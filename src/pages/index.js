@@ -28,6 +28,7 @@ export default function Home() {
         <h2>Où que vous soyez. Annulez à tout moment.</h2>
         <form action="">
           <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
+          <div className="header__form">
           <Input
           name="email"
           id="email"
@@ -37,6 +38,7 @@ export default function Home() {
           placeholder="Adresse e-mail"
           ></Input>
           <Button type="button" classes="btn btn__color-red" title="Commencer >"></Button>
+          </div>
         </form>
       </div>
       <div></div>
