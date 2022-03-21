@@ -1,16 +1,61 @@
 .header {
   &__main {
-    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/87a1d9d8-a21d-4109-ba3a-c10d9055f5cf/5491a337-dd7f-423e-aac5-6da179feb9b9/FR-fr-20220307-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url("https://assets.nflxext.com/ffe/siteui/vlv3/87a1d9d8-a21d-4109-ba3a-c10d9055f5cf/5491a337-dd7f-423e-aac5-6da179feb9b9/FR-fr-20220307-popsignuptwoweeks-perspective_alpha_website_large.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 772px;
     max-width: 100%;
   }
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
   &__logo {
     img {
-      height: 45px;
-      width: 167px;
+      height: 65px;
+      width: 187px;
+    }
+  }
+  &__nav {
+    .nav {
+      &__list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      &__item {
+        margin-left: 30px;
+      }
+    }
+  }
+  &__below {
+    padding: 75px 0;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+      margin: 0px 75px 0px 75px;
+    }
+    h2 {
+      font-size: 1.625rem;
+      text-align: center;
+      margin: 16px 75px 16px 75px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      text-align: center;
+      padding: 0px 47px 20px 47px;
     }
   }
 }

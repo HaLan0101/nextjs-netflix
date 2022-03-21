@@ -1,0 +1,32 @@
+.btn {
+  border: none;
+  padding: 7px 17px;
+  background-color: none;
+  transition: 0.3s all;
+  &__color {
+    &-red {
+      background: red;
+      color: white;
+      border-radius: 3px;
+      font-weight: 400;
+    }
+    &-white {
+      background: white;
+      color: black;
+      border-radius: 3px;
+      font-weight: 400;
+      &:hover {
+        background: gray;
+        color: black;
+        transition: 0.3s all;
+      }
+    }
+    &-black {
+      background: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      border-radius: 3px;
+      font-weight: 400;
+      border: 1px solid #aaa;
+    }
+  }
+}
