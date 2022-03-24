@@ -5,7 +5,7 @@ import Input from "../components/Input";
 export default function Home() {
   return (
     <>
-    <header className='header__main'>
+    <header className='header__main__home'>
       <div className='header__top'>
         <div className='header__logo'>
           <img src={LogoNetFlix.src} alt="netflix" />

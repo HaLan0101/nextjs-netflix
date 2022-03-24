@@ -1,17 +1,19 @@
 .header {
   &__main {
     background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.8) 0,
-        rgba(0, 0, 0, 0) 60%,
-        rgba(0, 0, 0, 0.8) 100%
-      ),
-      url("https://assets.nflxext.com/ffe/siteui/vlv3/87a1d9d8-a21d-4109-ba3a-c10d9055f5cf/5491a337-dd7f-423e-aac5-6da179feb9b9/FR-fr-20220307-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 772px;
     max-width: 100%;
+    &__home {
+      background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/87a1d9d8-a21d-4109-ba3a-c10d9055f5cf/5491a337-dd7f-423e-aac5-6da179feb9b9/FR-fr-20220307-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    }
   }
   &__top {
     display: flex;
