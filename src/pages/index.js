@@ -5,12 +5,12 @@ import Input from "../components/Input";
 export default function Home() {
   return (
     <>
-    <header className='header__main__home'>
-      <div className='header__top'>
-        <div className='header__logo'>
+    <header className='home__main'>
+      <div className='home__top'>
+        <div className='home__logo'>
           <img src={LogoNetFlix.src} alt="netflix" />
         </div>
-        <div className='header__nav'>
+        <div className='home__nav'>
           <ul className='nav__list'>
             <li className='nav__item'>
             <Button type="button" classes="btn btn__color-black" title="Français">
@@ -24,12 +24,12 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <div className="header__below">
+      <div className="home__below">
         <h1>Films, séries TV et bien plus en illimité.</h1>
         <h2>Où que vous soyez. Annulez à tout moment.</h2>
         <form action="">
           <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
-          <div className="header__form">
+          <div className="home__form">
           <Input
           name="email"
           id="email"
