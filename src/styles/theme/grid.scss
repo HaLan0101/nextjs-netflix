@@ -1,13 +1,28 @@
 .film {
   &__grid {
-    display: inline-block;
+    display: flex;
+    padding: 0 55px;
+    &:hover .film__card {
+      transform: translateX(-25%);
+    }
   }
   &__card {
+    background: transparent;
+    flex: 0 0 19.7%;
+    text-align: center;
+    margin: 0 2px;
+    transition: transform 300ms ease 100ms;
     img {
-      width: 20%;
+      width: 100%;
     }
     h2 {
       position: absolute;
+    }
+    &:hover ~ .film__card {
+      transform: translateX(25%);
+    }
+    &:hover {
+      transform: scale(1.5) !important;
     }
   }
 }
