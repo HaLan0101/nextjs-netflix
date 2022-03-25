@@ -1,27 +1,29 @@
 import React from 'react';
 import LogoNetFlix from "../public/LogoNetFlix.png";
 import UserNetFlix from "../public/user.jpg";
-import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header = () => {
     return (
         <>
         <header className='header__main'>
             <div className='header__logo'>
                 <img src={LogoNetFlix.src} alt="netflix"/>
-                <ul className='nav__list'>
+                <div className='header__nav__left'>
+                    <ul className='nav__list'>
                         <li className='nav__item'><a href="">Acceuil</a></li>
                         <li className='nav__item'><a href="">Séries</a></li>
                         <li className='nav__item'><a href="">Films</a></li>
                         <li className='nav__item'><a href="">Nouveautés les plus regardées</a></li>
                         <li className='nav__item'><a href="">Ma liste</a></li>
-                </ul>
+                    </ul>
+                </div>
             </div>
-            <div className='header__nav'>
+            <div className='header__nav__right'>
                 <ul className='nav__list'>
-                    <li className='nav__item'></li>
-                    <li className='nav__item'>DIRECT</li>
-                    <li className='nav__item'>Jeunesse</li>
-                    <li className='nav__item'></li>
+                    <li className='nav__item'><FontAwesomeIcon icon="search" /></li>
+                    <li className='nav__item'><a href="">DIRECT</a></li>
+                    <li className='nav__item'><a href="">Jeunesse</a></li>
+                    <li className='nav__item'><FontAwesomeIcon icon="bell" /></li>
                     <li className='nav__item'>
                         <img src={UserNetFlix.src} alt="" />
                     </li>

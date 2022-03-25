@@ -13,8 +13,7 @@ export default function Home() {
         <div className='home__nav'>
           <ul className='nav__list'>
             <li className='nav__item'>
-            <Button type="button" classes="btn btn__color-black" title="Français">
-            </Button>
+            <Button type="button" classes="btn btn__color-black" title="Français"></Button>
             </li>
             <li className='nav__item'>
               <Link href="/login">
