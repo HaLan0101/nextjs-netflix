@@ -8,8 +8,8 @@ const Index = () => {
     useEffect(() => {
         filmService.getTrending()
           .then((data) => {
-            console.log(data);
-            setFilms(data);
+            console.log(data.results);
+            setFilms(data.results);
           })
         .catch(err=>console.log(err))
       },[]);
@@ -22,7 +22,10 @@ const Index = () => {
                     <div className='film__trend'>
                         <h1>Tendances actuelles</h1>
                         <div className="film__grid">
-                            <FilmCard></FilmCard>
+                            {films &&
+                                films.map((film) => (
+                                    <FilmCard film={film} key={film.id}></FilmCard>
+                            ))}
                         </div>
                     </div>
                     <div className='film__genre'>
