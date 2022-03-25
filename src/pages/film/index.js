@@ -6,7 +6,24 @@ const Index = () => {
     return (
         <>
             <Header></Header>
-            <Hero></Hero>
+            <body>
+                <Hero></Hero>
+                <div className='film__list'>
+                    <div className='film__new'>
+                        <h1>Nouveautés</h1>
+                        <img src="" alt="" />
+                    </div>
+                    <div className='film__genre'>
+                        <h1>Actions</h1>
+                        <img src="" alt="" />
+                    </div>
+                    <div className='film__mylist'>
+                        <h1>Ma list</h1>
+                        <img src="" alt="" />
+                    </div>
+                </div>
+                
+            </body>
             
         </>
     );
