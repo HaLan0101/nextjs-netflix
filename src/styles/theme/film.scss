@@ -1,15 +1,5 @@
 .film {
-  &__list {
-    padding-left: 20px;
-  }
-  &__trend {
-    position: absolute;
-    top: 100%;
-  }
-  &__genre {
-    margin-top: 100px;
-  }
-  &__mylist {
-    margin-top: 100px;
+  &__home {
+    overflow-x: hidden;
   }
 }

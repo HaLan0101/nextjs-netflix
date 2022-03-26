@@ -1,11 +1,19 @@
 import React from 'react';
+import { useEffect, useState } from "react";
 import LogoNetFlix from "../public/LogoNetFlix.png";
 import UserNetFlix from "../public/user.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Header = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+    if (typeof window !== "undefined") {
+        window.onscroll = () => {
+            setIsScrolled(window.pageYOffset === 0 ? false : true);
+            return () => (window.onscroll = null);
+        };
+      }
     return (
         <>
-        <header className='header__main'>
+        <header className={isScrolled ? "header__main scrolled" : "header__main"}>
             <div className='header__logo'>
                 <img src={LogoNetFlix.src} alt="netflix"/>
                 <div className='header__nav__left'>

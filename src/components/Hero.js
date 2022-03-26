@@ -1,22 +1,32 @@
 import React from 'react';
 import Button from "../components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Hero = () => {
+const Hero = ({ type }) => {
     return (
         <nav className='hero__main'>
             <img src="https://wallpaperaccess.com/full/481127.jpg" alt="" />
             <div className='hero__content'>
-                <div className='hero__filter'>
-                    <form action="">
-                        <label>Films</label>
-                        <select name="films" id="films">
-                            <option value="action">Action</option>
-                            <option value="anime">Anime</option>
-                            <option value="comedies">Comedies</option>
-                            <option value="documentaires">Documentaires</option>
-                        </select>
-                    </form>
+            {type && (
+                <div className="hero__filter">
+                <span>{type === "film" ? "Films" : "Séries"}</span>
+                <select name="genre" id="genre">
+                    <option>Genre</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="crime">Crime</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="historical">Historical</option>
+                    <option value="horror">Horror</option>
+                    <option value="romance">Romance</option>
+                    <option value="sci-fi">Sci-fi</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="western">Western</option>
+                    <option value="animation">Animation</option>
+                    <option value="drama">Drama</option>
+                    <option value="documentary">Documentary</option>
+                </select>
                 </div>
+            )}
                 <img src="https://occ-0-2996-56.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABSZJbzBdEmq7Yp4jL3GceIF3MYJDxrgm41Ga1BGyUsXoD3ZYGj4xuUXA2AELBRt5PPsO-hSy4vZCS5rLXQupDzDVOpcnmG2Vbqmj.webp?r=13d" alt=""/>
                 <div className='hero__button'>
                     <div className='hero__button__play'>
