@@ -15,11 +15,6 @@
       color: black;
       border-radius: 3px;
       font-weight: 600;
-      &:hover {
-        background: gray;
-        color: black;
-        transition: 0.3s all;
-      }
     }
     &-black {
       background: rgba(0, 0, 0, 0.4);
