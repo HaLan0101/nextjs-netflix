@@ -2,7 +2,22 @@ import LogoNetFlix from "../public/LogoNetFlix.png";
 import Link from "next/link";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { useRef } from "react";
+import { useState } from "react";
 export default function Home() {
+  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const handleStart = () => {
+    setEmail(emailRef.current.value);
+  };
+  const handleFinish = () => {
+    setPassword(passwordRef.current.value);
+  };
   return (
     <>
     <header className='home__main'>
@@ -26,20 +41,18 @@ export default function Home() {
       <div className="home__below">
         <h1>Films, séries TV et bien plus en illimité.</h1>
         <h2>Où que vous soyez. Annulez à tout moment.</h2>
-        <form action="">
-          <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
-          <div className="home__form">
-          <Input
-          name="email"
-          id="email"
-          type="email"
-          classes="form__input"
-          required={true}
-          placeholder="Adresse e-mail"
-          ></Input>
-          <Button type="button" classes="btn btn__color-red" title="Commencer >"></Button>
+        <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
+        {!email ? (
+          <div className="home__input">
+            <input type="email" placeholder="email address" ref={emailRef} />
+            <Button type="button" classes="btn btn__color-red" title="Commencer" function={handleStart}></Button>
           </div>
-        </form>
+        ) : (
+          <form className="home__input">
+            <input type="password" placeholder="password" ref={passwordRef} />
+            <Button type="button" classes="btn btn__color-red" title="Entregistrer" function={handleFinish}></Button>
+          </form>
+        )}
       </div>
     </header>
     </>
