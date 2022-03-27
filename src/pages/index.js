@@ -1,7 +1,6 @@
 import LogoNetFlix from "../public/LogoNetFlix.png";
 import Link from "next/link";
 import Button from "../components/Button";
-import Input from "../components/Input";
 import { useRef } from "react";
 import { useState } from "react";
 export default function Home() {
@@ -32,7 +31,9 @@ export default function Home() {
             </li>
             <li className='nav__item'>
               <Link href="/login">
-                <Button type="button" classes="btn btn__color-red" title="S'identifier"></Button>
+                <form action="/login">
+                  <Button type="button" classes="btn btn__color-red" title="S'identifier"></Button>
+                </form>
               </Link>
             </li>
           </ul>
