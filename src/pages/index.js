@@ -3,11 +3,13 @@ import Link from "next/link";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { useState } from "react";
+import { useRouter } from "next/router";
 export default function Home() {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   })
+  const router = useRouter();
   function handleSubmit(e) {
     e.preventDefault()
     fetch('http://localhost:3004/users', {
@@ -16,7 +18,10 @@ export default function Home() {
         body: JSON.stringify(formData)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then((data) =>{
+      console.log(data);
+      router.push(`/film`);
+    })
   }
   function handleChange(e) {
     setFormData({...formData, [e.target.name] : e.target.value})
@@ -48,29 +53,29 @@ export default function Home() {
         <h2>Où que vous soyez. Annulez à tout moment.</h2>
         <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
         <form className="home__input" onSubmit={e => handleSubmit(e)}>
-        <Input
-          label="Email"
-          name="email"
-          id="email"
-          type="email"
-          classes="form__input"
-          required={true}
-          placeholder="Email"
-          value={formData.email}
-          handleChange={e => handleChange(e)}
-              />
           <Input
-          label="Mot de passe"
-          name="password"
-          id="password"
-          type="password"
-          classes="form__input"
-          required={true}
-          placeholder="Mot de passe"
-          value={formData.password}
-          handleChange={e => handleChange(e)}
-              />
-          <Button type="submit" classes="btn btn__color-red" title="Entregistrer"></Button>
+            label="Email"
+            name="email"
+            id="email"
+            type="email"
+            classes="form__input"
+            required={true}
+            placeholder="Email"
+            value={formData.email}
+            handleChange={e => handleChange(e)}
+                />
+            <Input
+            label="Mot de passe"
+            name="password"
+            id="password"
+            type="password"
+            classes="form__input"
+            required={true}
+            placeholder="Mot de passe"
+            value={formData.password}
+            handleChange={e => handleChange(e)}
+                />
+            <Button type="submit" classes="btn btn__color-red" title="Entregistrer"></Button>
         </form>
       </div>
     </header>

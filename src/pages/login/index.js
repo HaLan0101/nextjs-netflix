@@ -4,6 +4,7 @@ import Link from "next/link";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { useState } from "react";
+import { useRouter } from "next/router";
 const Index = () => {
   const [formData, setFormData] = useState({
     email: '', 
@@ -32,7 +33,7 @@ const Index = () => {
         </div>
       </div>
       <div className="home__form">
-        <form onSubmit={e => handleSubmit(e)}>
+        <form onSubmit={e => handleSubmit(e)} action="/login" >
           <h1>S'identigier</h1>
           <Input
           label="Email"

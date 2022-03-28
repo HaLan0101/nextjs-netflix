@@ -9,6 +9,36 @@
       "email": "test1@ynov.com",
       "password": "$2a$10$ZVTO4sRf0uOHtYH/j.yTRubJkMC1rS2ydvxJ8LPHxeldNYsbi1fv6",
       "id": 2
+    },
+    {
+      "email": "test3@ynov.com",
+      "password": "$2a$10$RFKUuDohaPDM25qQqCUP3ucZVKza1.poAlh5uc2dA1sEWnF9H53Q.",
+      "id": 3
+    },
+    {
+      "email": "test2@ynov.com",
+      "password": "$2a$10$5RtrGwssRNAMWdq6X8KCFu9iMBOrsfK0B6.0/DhBn7yOhqmoOTXtC",
+      "id": 4
+    },
+    {
+      "email": "test5@gmail.com",
+      "password": "$2a$10$3tEU.B3iNJfIhkQMYa6cce2WGAx.yhyul37EqLVN.R//VI7hd495G",
+      "id": 5
+    },
+    {
+      "email": "test6@gmail.com",
+      "password": "$2a$10$ViC9luPQaL/NTibSeBBZkO5heZ9VOyCnGh/HuH3gdjRJwWUoUqxV6",
+      "id": 6
+    },
+    {
+      "email": "test7@ynov.com",
+      "password": "$2a$10$oWQfzEU9nKxNddojlQkE0eaQsFeRkDFJJWeJT83h5YIhiOcEzcIF.",
+      "id": 7
+    },
+    {
+      "email": "test8@ynov.com",
+      "password": "$2a$10$6HMpmXN55S.VwvhyXzLdFe2cLclpRRr3Xn5szMYpTS6p.RgE/ewPi",
+      "id": 8
     }
   ]
 }
