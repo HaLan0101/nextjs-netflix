@@ -8,9 +8,15 @@ const Index = () => {
             <Header></Header>
             <body className="film__home">
                 <Hero type="film"></Hero>
-                <List title="Tendances actuelles"></List>
-                <List title="Action"></List>
-                <List title="Ma liste"></List>
+                <div className="film__category">
+                    <List title="Tendances actuelles"></List>
+                </div>
+                <div className="film__category">
+                    <List title="Action"></List>
+                </div>
+                <div className="film__category">
+                    <List title="Ma liste"></List>
+                </div>
             </body>
             
         </>
