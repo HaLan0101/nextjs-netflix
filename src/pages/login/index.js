@@ -3,9 +3,26 @@ import LogoNetFlix from "../../public/LogoNetFlix.png";
 import Link from "next/link";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import { useRef } from "react";
 import { useState } from "react";
 const Index = () => {
+  const [formData, setFormData] = useState({
+    email: '', 
+    password: '' 
+  })
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('http://localhost:3004/login', {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data.user))
+  }
+
+  function handleChange(e) {
+      setFormData({...formData, [e.target.name] : e.target.value})
+  }
     return (
         <>
     <header className='home__main'>
@@ -15,7 +32,7 @@ const Index = () => {
         </div>
       </div>
       <div className="home__form">
-        <form>
+        <form onSubmit={e => handleSubmit(e)}>
           <h1>S'identigier</h1>
           <Input
           label="Email"
@@ -25,6 +42,8 @@ const Index = () => {
           classes="input"
           required={true}
           placeholder="E-mail"
+          value={formData.email}
+          handleChange={e => handleChange(e)}
               />
           <Input
           label="Password"
@@ -34,8 +53,10 @@ const Index = () => {
           classes="input"
           required={true}
           placeholder="Mot de passe"
+          value={formData.password}
+          handleChange={e => handleChange(e)}
               />
-          <Button title="S'identifier" type="button" classes="btn btn__color-red"></Button>
+          <Button title="S'identifier" type="submit" classes="btn btn__color-red"></Button>
           <span>
             Première sur NetFlix ? <b><Link href="/"><a>Inscrivez-vous</a></Link></b>
           </span>

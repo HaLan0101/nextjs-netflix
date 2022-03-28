@@ -10,6 +10,7 @@ const Input = (props) => {
             required={props.required}
             placeholder={props.placeholder}
             className={props.classes}
+            value={props.value}
             />
         </div>
     );

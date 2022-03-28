@@ -1,22 +1,26 @@
 import LogoNetFlix from "../public/LogoNetFlix.png";
 import Link from "next/link";
 import Button from "../components/Button";
-import { useRef } from "react";
+import Input from "../components/Input";
 import { useState } from "react";
 export default function Home() {
-  
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const emailRef = useRef();
-  const passwordRef = useRef();
-
-  const handleStart = () => {
-    setEmail(emailRef.current.value);
-  };
-  const handleFinish = () => {
-    setPassword(passwordRef.current.value);
-  };
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('http://localhost:3004/users', {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
+  function handleChange(e) {
+    setFormData({...formData, [e.target.name] : e.target.value})
+  }
   return (
     <>
     <header className='home__main'>
@@ -43,17 +47,31 @@ export default function Home() {
         <h1>Films, séries TV et bien plus en illimité.</h1>
         <h2>Où que vous soyez. Annulez à tout moment.</h2>
         <h3>Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</h3>
-        {!email ? (
-          <div className="home__input">
-            <input type="email" placeholder="email address" ref={emailRef} />
-            <Button type="button" classes="btn btn__color-red" title="Commencer" function={handleStart}></Button>
-          </div>
-        ) : (
-          <form className="home__input">
-            <input type="password" placeholder="password" ref={passwordRef} />
-            <Button type="button" classes="btn btn__color-red" title="Entregistrer" function={handleFinish}></Button>
-          </form>
-        )}
+        <form className="home__input" onSubmit={e => handleSubmit(e)}>
+        <Input
+          label="Email"
+          name="email"
+          id="email"
+          type="email"
+          classes="form__input"
+          required={true}
+          placeholder="Email"
+          value={formData.email}
+          handleChange={e => handleChange(e)}
+              />
+          <Input
+          label="Mot de passe"
+          name="password"
+          id="password"
+          type="password"
+          classes="form__input"
+          required={true}
+          placeholder="Mot de passe"
+          value={formData.password}
+          handleChange={e => handleChange(e)}
+              />
+          <Button type="submit" classes="btn btn__color-red" title="Entregistrer"></Button>
+        </form>
       </div>
     </header>
     </>

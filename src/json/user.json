@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "email": "test@ynov.com",
+      "password": "$2a$10$Gd.52ZGeKrXonp8aPL80ku/XTLBVR2XcIgvhNBiRw6fIItdHmItG2",
+      "id": 1
+    },
+    {
+      "email": "test1@ynov.com",
+      "password": "$2a$10$ZVTO4sRf0uOHtYH/j.yTRubJkMC1rS2ydvxJ8LPHxeldNYsbi1fv6",
+      "id": 2
+    }
+  ]
+}

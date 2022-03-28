@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Listitem = ({index,film}) => {
     const [isHovered, setIsHovered] = useState(false);
     const trailer="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+    const [showModal,setShowModal]= useState(false);
     return (
+        <>
         <div className='listItem' style={{ left: isHovered && index * 225 - 50 + index * 2.5 }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <img src={`http://image.tmdb.org/t/p/original${film.backdrop_path}`} alt="" />
             {isHovered && (
@@ -15,6 +17,7 @@ const Listitem = ({index,film}) => {
                     <FontAwesomeIcon className="icon" icon="fa-solid fa-play" />
                     <FontAwesomeIcon className="icon" icon="fa-solid fa-circle-plus" />
                     <FontAwesomeIcon className="icon" icon="fa-solid fa-thumbs-up" />
+                    <FontAwesomeIcon className="icon modal" icon="fa-solid fa-circle-chevron-down" onClick={()=> setShowModal(true)} />
                 </div>
                 <div className='itemTitle'>{film.title}</div>
                 <div className="itemInfoTop">
@@ -30,6 +33,7 @@ const Listitem = ({index,film}) => {
             </>
             )}
             </div>
+        </>
     );
 }
 
