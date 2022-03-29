@@ -3,6 +3,7 @@ import LogoNetFlix from "../../public/LogoNetFlix.png";
 import Link from "next/link";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
+import ModalLogin from "../../components/ModalLogin";
 import { useState } from "react";
 import { useRouter } from "next/router";
 const Index = () => {
@@ -10,6 +11,8 @@ const Index = () => {
     email: '', 
     password: '' 
   })
+  const router = useRouter();
+  const [showModal,setShowModal]= useState(false);
   function handleSubmit(e) {
     e.preventDefault()
     fetch('http://localhost:3004/login', {
@@ -18,7 +21,17 @@ const Index = () => {
         body: JSON.stringify(formData)
     })
     .then(res => res.json())
-    .then(data => console.log(data.user))
+    .then((data) => {
+      console.log(data.user);
+      if(data.user.error){
+        setShowModal(true);
+      }
+      else{
+        router.push(`/film`);
+      }})
+    .catch((err) => {
+      setShowModal(true);
+      console.log(err)});
   }
 
   function handleChange(e) {
@@ -33,6 +46,9 @@ const Index = () => {
         </div>
       </div>
       <div className="home__form">
+      <ModalLogin title="Erreur" isActive={showModal} closeFunction={()=>setShowModal(!showModal)}>
+        <p>Email ou mot de passe est faux</p>
+      </ModalLogin>
         <form onSubmit={e => handleSubmit(e)} action="/login" >
           <h1>S'identigier</h1>
           <Input

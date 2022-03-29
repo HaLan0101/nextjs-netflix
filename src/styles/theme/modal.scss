@@ -1,18 +1,55 @@
-.overlay {
-  position: fixed;
-  left: 0%;
-  top: 0%;
-  height: 100%;
-  width: 100%;
-  background: transparent;
-}
 .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  width: 40%;
-  padding: 20px;
-  border-radius: 4px;
+  &__container {
+    position: fixed;
+    width: 100vw;
+    height: 1913px;
+    top: -950px;
+    left: 0;
+    z-index: 999;
+  }
+  &__overlay {
+    position: fixed;
+    width: 100vw;
+    height: 1913px;
+    top: -950px;
+    left: -50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1.7;
+  }
+  &__modal {
+    background-color: #141414;
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+  }
+  &__header {
+    img {
+      width: 750px;
+      height: 250px;
+      margin-bottom: 10pxc;
+    }
+    .x {
+      position: absolute;
+      left: 750px;
+    }
+  }
+  &__button {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 55%;
+    .hero__button__play {
+      padding: 0px;
+    }
+    .icon {
+      margin-right: 20px;
+    }
+  }
 }

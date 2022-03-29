@@ -7,7 +7,7 @@ import ListItem from "../components/ListItem";
 const List = (props) => {
     const [films, setFilms] = useState();
     useEffect(() => {
-        filmService.getTrending()
+        filmService.getMovies()
           .then((data) => {
             console.log(data.results);
             setFilms(data.results);

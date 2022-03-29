@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Modal from "../components/Modal";
 const Listitem = ({index,film}) => {
     const [isHovered, setIsHovered] = useState(false);
     const trailer="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
@@ -17,11 +18,11 @@ const Listitem = ({index,film}) => {
                     <FontAwesomeIcon className="icon" icon="fa-solid fa-play" />
                     <FontAwesomeIcon className="icon" icon="fa-solid fa-circle-plus" />
                     <FontAwesomeIcon className="icon" icon="fa-solid fa-thumbs-up" />
-                    <FontAwesomeIcon className="icon modal" icon="fa-solid fa-circle-chevron-down" onClick={()=> setShowModal(true)} />
+                    <FontAwesomeIcon className="icon" icon="fa-solid fa-circle-chevron-down" onClick={()=> setShowModal(true)} />
                 </div>
                 <div className='itemTitle'>{film.title}</div>
                 <div className="itemInfoTop">
-                    <span className='itemInfoRecommand'>Recommandé à 98%</span>
+                    <span className='itemInfoRecommand'>Recommandé à 98% {film.id}</span>
                     <span className="limit">+16</span>
                     <span>1 h 54 min</span>
                 </div>
@@ -32,7 +33,8 @@ const Listitem = ({index,film}) => {
             </div>
             </>
             )}
-            </div>
+        </div>
+        <Modal isActive={showModal} closeFunction={()=>setShowModal(!showModal)} desc={film.overview} img={`http://image.tmdb.org/t/p/original${film.backdrop_path}`}></Modal>
         </>
     );
 }
