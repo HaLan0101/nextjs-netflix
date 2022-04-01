@@ -34,12 +34,10 @@ const Modal = (props) => {
                             </div>
                             <div className='content__right'>
                                 <div className='content__distribution'>Yaya</div>
-                                <div className='content__genre'>Action, Romain</div>
+                                <div className='content__genre'>Action</div>
                             </div>
                         </div>
                     </div>
-                        
-                    <div className="modal__content">{props.children}</div>
                 </div>
             </div>
             </>

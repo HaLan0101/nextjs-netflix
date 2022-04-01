@@ -5,12 +5,17 @@ export default{
         return fetch(`${apiUrl}/discover/movie?api_key=${apiKey}`)
         .then((res) => res.json());
         },
-    getActionMovies(){
-        return fetch(`${apiUrl}/discover/movie?api_key=${apiKey}&with_genres=28`)
-        .then((res) => res.json());
-        },
     getMovie(id){
         return fetch(`${apiUrl}/movie/${id}?api_key=${apiKey}`)
         .then((res) => res.json());
         },
+    getUpcoming(){
+        return fetch(`${apiUrl}/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`)
+        .then((res) => res.json());
+        },
+    getPopular(){
+        return fetch(`${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+        .then((res) => res.json());
+    },
+
 }

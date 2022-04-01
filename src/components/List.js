@@ -7,12 +7,29 @@ import ListItem from "../components/ListItem";
 const List = (props) => {
     const [films, setFilms] = useState();
     useEffect(() => {
-        filmService.getMovies()
+        if(props.title === "Movies"){
+            filmService.getMovies()
           .then((data) => {
             console.log(data.results);
             setFilms(data.results);
           })
-        .catch(err=>console.log(err))
+          .catch(err=>console.log(err))
+        }
+        if (props.title === "Populaire") {
+            filmService.getPopular()
+            .then((data) => {
+              console.log(data.results);
+              setFilms(data.results);
+            })
+            .catch(err=>console.log(err))
+        } else{
+            filmService.getUpcoming()
+            .then((data) => {
+              console.log(data.results);
+              setFilms(data.results);
+            })
+            .catch(err=>console.log(err))
+        }
       },[]);
     const [isMoved, setIsMoved] = useState(false);
     const [slideNumber, setSlideNumber] = useState(0);

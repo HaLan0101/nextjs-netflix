@@ -9,13 +9,13 @@ const Index = () => {
             <body className="film__home">
                 <Hero type="film"></Hero>
                 <div className="film__category">
-                    <List title="Tendances actuelles"></List>
+                    <List title="Movies"></List>
                 </div>
                 <div className="film__category">
-                    <List title="Action"></List>
+                    <List title="Populaire"></List>
                 </div>
                 <div className="film__category">
-                    <List title="Ma liste"></List>
+                    <List title="A venir"></List>
                 </div>
             </body>
             
