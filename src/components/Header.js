@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import LogoNetFlix from "../public/LogoNetFlix.png";
 import UserNetFlix from "../public/user.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Search from "../components/Search";
 import Link from "next/link";
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [search,setSearch]= useState(false);
     if (typeof window !== "undefined") {
         window.onscroll = () => {
             setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -29,7 +31,9 @@ const Header = () => {
             </div>
             <div className='header__nav__right'>
                 <ul className='nav__list'>
-                    <li className='nav__item'><FontAwesomeIcon icon="search" /></li>
+                    <li className='nav__item'> 
+                        <Search></Search>
+                    </li>
                     <li className='nav__item'><a href="">DIRECT</a></li>
                     <li className='nav__item'><a href="">Jeunesse</a></li>
                     <li className='nav__item'><FontAwesomeIcon icon="bell" /></li>
