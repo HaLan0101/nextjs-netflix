@@ -4,9 +4,9 @@ const Search = (props) => {
     return (
         <div>
             <div className="search__box" >
-                <input className='search__input' type="text" placeholder="Titre......."/>
-                <a className="search__btn" href='#'>
-                    <FontAwesomeIcon icon="search"  onClick={props.active}/>
+                <input className='search__input' type="text" placeholder={props.message} onChange={props.onChange} />
+                <a className="search__btn" href='/search'>
+                    <FontAwesomeIcon icon="search"/>
                 </a>
             </div>
         </div>
