@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LogoNetFlix from "../public/LogoNetFlix.png";
 import UserNetFlix from "../public/user.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,7 +24,7 @@ const Header = (props) => {
                         <li className='nav__item'><a href="">Séries</a></li>
                         <li className='nav__item'><a href="">Films</a></li>
                         <li className='nav__item'><a href="">Nouveautés les plus regardées</a></li>
-                        <li className='nav__item'><Link href="/wishlist"><a href="">Ma liste</a></Link></li>
+                        <li className='nav__item'><Link href="/wishlist"><a>Ma liste</a></Link></li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +37,7 @@ const Header = (props) => {
                     <li className='nav__item'><a href="">Jeunesse</a></li>
                     <li className='nav__item'><FontAwesomeIcon icon="bell" /></li>
                     <li className='nav__item'>
-                        <img src={UserNetFlix.src} alt="" />
+                    <Link href="/profil"><a href=""><img src={UserNetFlix.src} alt="" /></a></Link>
                     </li>
                 </ul>
             </div>

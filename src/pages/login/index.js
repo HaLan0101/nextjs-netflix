@@ -23,6 +23,7 @@ const Index = () => {
     .then(res => res.json())
     .then((data) => {
       console.log(data.user);
+      localStorage.setItem('user',JSON.stringify(data));
       if(data.user.error){
         setShowModal(true);
       }

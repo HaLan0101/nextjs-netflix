@@ -4,11 +4,13 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import ModalLogin from "../components/ModalLogin";
 export default function Home() {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   })
+  const [showModal,setShowModal]= useState(false);
   const router = useRouter();
   function handleSubmit(e) {
     e.preventDefault()
@@ -20,8 +22,17 @@ export default function Home() {
     .then(res => res.json())
     .then((data) =>{
       console.log(data);
-      router.push(`/film`);
-    })
+      if(data.user.error){
+        setShowModal(true);
+      }
+      else{
+        localStorage.setItem('token',data.accessToken);
+        localStorage.setItem('user',JSON.stringify(data));
+        router.push(`/film`);
+      }})
+    .catch((err) => {
+      setShowModal(true);
+      console.log(err)});
   }
   function handleChange(e) {
     setFormData({...formData, [e.target.name] : e.target.value})
@@ -48,6 +59,9 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      <ModalLogin title="Erreur" isActive={showModal} closeFunction={()=>setShowModal(!showModal)}>
+        <p>Email est déjà utilisé</p>
+      </ModalLogin>
       <div className="home__below">
         <h1>Films, séries TV et bien plus en illimité.</h1>
         <h2>Où que vous soyez. Annulez à tout moment.</h2>

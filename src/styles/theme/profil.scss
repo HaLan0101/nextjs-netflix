@@ -1,0 +1,18 @@
+.profil {
+  padding: 15%;
+  &__content {
+    background: gray;
+    width: 50%;
+    height: 20%;
+    border-radius: 4px;
+    padding-left: 40%;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    .btn {
+      margin-top: 30px;
+    }
+  }
+  &__title {
+    padding-left: 40%;
+  }
+}
