@@ -7,7 +7,7 @@ const Index = () => {
         <>
             <Header></Header>
             <body className="film__home">
-                <Hero type="film"></Hero>
+                <Hero></Hero>
                 <div className="film__category">
                     <List title="Movies"></List>
                 </div>

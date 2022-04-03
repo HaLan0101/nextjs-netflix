@@ -12,14 +12,15 @@
     position: absolute;
     left: 5%;
     top: 20%;
-    img {
-      height: 300px;
-      margin-bottom: 40px;
+    padding-top: 170px;
+    h1{
+      color: red;
+      font-size: 100px;
     }
   }
   &__filter {
     position: absolute;
-    top: 80px;
+    top: 850px;
     left: 50px;
     font-size: 30px;
     font-weight: 500;

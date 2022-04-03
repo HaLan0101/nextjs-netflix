@@ -17,5 +17,9 @@ export default{
         return fetch(`${apiUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
         .then((res) => res.json());
     },
+    getGenres(id){
+        return fetch(`${apiUrl}/discover/movie?api_key=${apiKey}&with_genres=${id}&language=en-US&page=1`)
+        .then((res) => res.json());
+    }
 
 }

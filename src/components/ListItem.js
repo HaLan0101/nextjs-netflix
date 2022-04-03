@@ -24,9 +24,9 @@ const Listitem = ({index,film}) => {
     };
     return (
         <>
+        <Modal isActive={showModal} id={film.id} closeFunction={()=>setShowModal(!showModal)} desc={film.overview} img={`http://image.tmdb.org/t/p/original${film.backdrop_path}`}></Modal>
         <div className='listItem' style={{ left: isHovered && index * 225 - 50 + index * 2.5 }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <img className='image' src={`http://image.tmdb.org/t/p/original${film.backdrop_path}`} alt="" />
-            <Modal isActive={showModal} id={film.id} closeFunction={()=>setShowModal(!showModal)} desc={film.overview} img={`http://image.tmdb.org/t/p/original${film.backdrop_path}`}></Modal>
             {isHovered && (
             <>
             <video src={trailer} autoPlay={true} loop />

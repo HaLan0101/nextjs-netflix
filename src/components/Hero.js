@@ -1,33 +1,27 @@
 import React from 'react';
 import Button from "../components/Button";
+import { useEffect, useState } from "react";
+import filmService from "../services/film.service";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Hero = ({ type }) => {
+const Hero = () => {
+    const [movie, setMovie] = useState();
+    useEffect(() => {
+        const id = Math.random() * (22 - 11 + 1) + 11;
+        filmService.getMovie(id)
+        .then((data) => {
+        console.log(data);
+        setMovie(data);
+        })
+        .catch(err=>console.log(err))     
+    },[]);
     return (
+        <>
+        {movie ? (
+            <>
         <nav className='hero__main'>
-            <img src="https://wallpaperaccess.com/full/481127.jpg" alt="" />
+            <img src={`http://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
             <div className='hero__content'>
-            {type && (
-                <div className="hero__filter">
-                <span>{type === "film" ? "Films" : "Séries"}</span>
-                <select name="genre" id="genre">
-                    <option>Genre</option>
-                    <option value="adventure">Adventure</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="crime">Crime</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="historical">Historical</option>
-                    <option value="horror">Horror</option>
-                    <option value="romance">Romance</option>
-                    <option value="sci-fi">Sci-fi</option>
-                    <option value="thriller">Thriller</option>
-                    <option value="western">Western</option>
-                    <option value="animation">Animation</option>
-                    <option value="drama">Drama</option>
-                    <option value="documentary">Documentary</option>
-                </select>
-                </div>
-            )}
-                <img src="https://occ-0-2996-56.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABSZJbzBdEmq7Yp4jL3GceIF3MYJDxrgm41Ga1BGyUsXoD3ZYGj4xuUXA2AELBRt5PPsO-hSy4vZCS5rLXQupDzDVOpcnmG2Vbqmj.webp?r=13d" alt=""/>
+                <h1>{movie.title}</h1>
                 <div className='hero__button'>
                     <div className='hero__button__play'>
                         <FontAwesomeIcon className='icon__play' icon="play"/>
@@ -40,6 +34,11 @@ const Hero = ({ type }) => {
                 </div>
             </div>
         </nav>
+        </>
+          ) : (
+            ""
+          )}
+        </>
     );
 }
 
