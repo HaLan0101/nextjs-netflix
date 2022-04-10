@@ -1,6 +1,6 @@
 Name : DANG Ngoc Ha Lan
 
-Description:
+Description: Voir la doc PDF 
 
 Les fonctionalités faites:
 -L’application Netflix ne présente que des films (pas de séries)
