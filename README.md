@@ -1,5 +1,27 @@
 Name : DANG Ngoc Ha Lan
 
+Description:
+
+Les fonctionalités faites:
+-L’application Netflix ne présente que des films (pas de séries)
+-Un filtre par catégories sur la page des films
+-Un formulaire de recherche sur le titre d’un film
+-Une wishlist des films (avec le localstorage)
+-Pas de multi profil
+-Pas d’abonnement, l’application est gratuite
+-Login & register à partir d’un JSON
+-Les alertes et notifications (validations et erreurs)
+-L’application est modularisées en composants, structurés en services etc..
+
+Techniques : 
+-Front NextJs 
+-Authentification avec un fake JWT
+-Sass
+
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
