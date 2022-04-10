@@ -51,7 +51,7 @@ const Index = () => {
         <p>Email ou mot de passe est faux</p>
       </ModalLogin>
         <form onSubmit={e => handleSubmit(e)} action="/login" >
-          <h1>S'identigier</h1>
+          <h1>S'identifier</h1>
           <Input
           label="Email"
           name="email"
