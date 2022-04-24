@@ -1,5 +1,7 @@
 Name : DANG Ngoc Ha Lan
 
+Lancer cette commande pour connecter au serveur json : json-server --watch src/json/user.json --port 3004 -m ./node_modules/json-server-auth
+
 Description: Voir la doc PDF 
 
 Les fonctionalités faites:
